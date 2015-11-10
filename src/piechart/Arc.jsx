@@ -31,6 +31,10 @@ module.exports = React.createClass({
     };
   },
 
+  handleOnClick() {
+    this.props.handleOnClick(this.props.label);
+  },
+
   render() {
     var props = this.props;
 
@@ -48,6 +52,7 @@ module.exports = React.createClass({
           stroke={props.sectorBorderColor}
           onMouseOver={props.handleMouseOver}
           onMouseLeave={props.handleMouseLeave}
+          onClick={this.handleOnClick}
         />
         {props.showOuterLabels ? this.renderOuterLabel(props, arc) : null}
         {props.showInnerLabels ? this.renderInnerLabel(props, arc) : null}

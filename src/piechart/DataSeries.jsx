@@ -61,6 +61,7 @@ module.exports = React.createClass({
           showOuterLabels={props.showOuterLabels}
           sectorBorderColor={props.sectorBorderColor}
           hoverAnimation={props.hoverAnimation}
+          handleOnClick={props.handleOnClick}
         />
       );
     });
