@@ -352,7 +352,7 @@ module.exports = React.createClass({
   },
 
   handleOnClick: function handleOnClick() {
-    this.props.handleOnClick(this.props.label);
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
   },
 
   render: function render() {
@@ -2520,7 +2520,7 @@ module.exports = React.createClass({
   },
 
   handleOnClick: function handleOnClick() {
-    this.props.handleOnClick(this.props.label);
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
   },
 
   render: function render() {

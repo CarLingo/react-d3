@@ -21,7 +21,7 @@ module.exports = React.createClass({displayName: "exports",
   },
 
   handleOnClick:function() {
-    this.props.handleOnClick(this.props.label);
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
   },
 
   render:function() {
