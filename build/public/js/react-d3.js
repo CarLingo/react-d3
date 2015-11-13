@@ -351,13 +351,18 @@ module.exports = React.createClass({
     };
   },
 
+  handleOnClick: function handleOnClick() {
+    this.props.handleOnClick(this.props.label);
+  },
+
   render: function render() {
     return React.createElement('rect', _extends({
       className: 'rd3-barchart-bar'
     }, this.props, {
       fill: this.props.fill,
       onMouseOver: this.props.handleMouseOver,
-      onMouseLeave: this.props.handleMouseLeave
+      onMouseLeave: this.props.handleMouseLeave,
+      onClick: this.handleOnClick
     }));
   }
 });
@@ -522,7 +527,8 @@ module.exports = React.createClass({
       colors: props.colors,
       colorAccessor: props.colorAccessor,
       hoverAnimation: props.hoverAnimation,
-      valuesAccessor: props.valuesAccessor
+      valuesAccessor: props.valuesAccessor,
+      handleOnClick: props.handleOnClick
     })));
   }
 
@@ -636,6 +642,7 @@ module.exports = React.createClass({
     var hoverAnimation = _props2.hoverAnimation;
     var xScale = _props2.xScale;
     var yScale = _props2.yScale;
+    var handleOnClick = _props2.handleOnClick;
 
     return React.createElement(BarContainer, {
       height: height - yScale(segment.y),
@@ -643,7 +650,9 @@ module.exports = React.createClass({
       x: xScale(segment.x),
       y: yScale(segment.y0 + segment.y),
       fill: colors(colorAccessor(segment, seriesIdx)),
-      hoverAnimation: hoverAnimation
+      hoverAnimation: hoverAnimation,
+      handleOnClick: handleOnClick,
+      label: segment.x
     });
   }
 

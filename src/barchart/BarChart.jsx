@@ -152,6 +152,7 @@ module.exports = React.createClass({
             colorAccessor={props.colorAccessor}
             hoverAnimation={props.hoverAnimation}
             valuesAccessor={props.valuesAccessor}
+            handleOnClick={props.handleOnClick}
             />
         </g>
       </Chart>

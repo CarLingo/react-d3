@@ -20,6 +20,10 @@ module.exports = React.createClass({
     };
   },
 
+  handleOnClick() {
+    this.props.handleOnClick(this.props.label);
+  },
+
   render() {
     return (
       <rect
@@ -28,6 +32,7 @@ module.exports = React.createClass({
         fill={this.props.fill}
         onMouseOver={this.props.handleMouseOver}
         onMouseLeave={this.props.handleMouseLeave}
+        onClick={this.handleOnClick}
       />
     );
   }

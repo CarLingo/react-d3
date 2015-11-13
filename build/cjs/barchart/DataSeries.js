@@ -32,7 +32,7 @@ module.exports = React.createClass({
   },
 
   _renderBarContainer:function(segment, seriesIdx) {
-    var $__0=         this.props,colors=$__0.colors,colorAccessor=$__0.colorAccessor,height=$__0.height,hoverAnimation=$__0.hoverAnimation,xScale=$__0.xScale,yScale=$__0.yScale;
+    var $__0=          this.props,colors=$__0.colors,colorAccessor=$__0.colorAccessor,height=$__0.height,hoverAnimation=$__0.hoverAnimation,xScale=$__0.xScale,yScale=$__0.yScale,handleOnClick=$__0.handleOnClick;
     return (
       React.createElement(BarContainer, {
         height: height - yScale(segment.y), 
@@ -40,7 +40,9 @@ module.exports = React.createClass({
         x: xScale(segment.x), 
         y: yScale( segment.y0 + segment.y), 
         fill: colors(colorAccessor(segment, seriesIdx)), 
-        hoverAnimation: hoverAnimation}
+        hoverAnimation: hoverAnimation, 
+        handleOnClick: handleOnClick, 
+        label: segment.x}
       )
     )
   }
