@@ -151,7 +151,8 @@ module.exports = React.createClass({
             colors: props.colors, 
             colorAccessor: props.colorAccessor, 
             hoverAnimation: props.hoverAnimation, 
-            valuesAccessor: props.valuesAccessor}
+            valuesAccessor: props.valuesAccessor, 
+            handleOnClick: props.handleOnClick}
             )
         )
       )

@@ -20,6 +20,10 @@ module.exports = React.createClass({displayName: "exports",
     };
   },
 
+  handleOnClick:function() {
+    this.props.handleOnClick(this.props.label);
+  },
+
   render:function() {
     return (
       React.createElement("rect", React.__spread({
@@ -27,7 +31,8 @@ module.exports = React.createClass({displayName: "exports",
         this.props, 
         {fill: this.props.fill, 
         onMouseOver: this.props.handleMouseOver, 
-        onMouseLeave: this.props.handleMouseLeave})
+        onMouseLeave: this.props.handleMouseLeave, 
+        onClick: this.handleOnClick})
       )
     );
   }
