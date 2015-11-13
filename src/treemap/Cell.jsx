@@ -15,6 +15,10 @@ module.exports = React.createClass({
     label: React.PropTypes.string
   },
 
+  handleOnClick() {
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
+  },
+
   render() {
 
     var props = this.props;
@@ -36,6 +40,7 @@ module.exports = React.createClass({
           fill={props.fill} 
           onMouseOver={props.handleMouseOver}
           onMouseLeave={props.handleMouseLeave}
+          onClick={this.handleOnClick}
         />
         <text
           x={props.width / 2}
