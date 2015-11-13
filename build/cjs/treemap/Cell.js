@@ -15,6 +15,10 @@ module.exports = React.createClass({
     label: React.PropTypes.string
   },
 
+  handleOnClick:function() {
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
+  },
+
   render:function() {
 
     var props = this.props;
@@ -35,7 +39,8 @@ module.exports = React.createClass({
           height: props.height, 
           fill: props.fill, 
           onMouseOver: props.handleMouseOver, 
-          onMouseLeave: props.handleMouseLeave}
+          onMouseLeave: props.handleMouseLeave, 
+          onClick: this.handleOnClick}
         ), 
         React.createElement("text", {
           x: props.width / 2, 

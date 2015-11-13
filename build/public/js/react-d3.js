@@ -3202,6 +3202,10 @@ module.exports = React.createClass({
     label: React.PropTypes.string
   },
 
+  handleOnClick: function handleOnClick() {
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
+  },
+
   render: function render() {
 
     var props = this.props;
@@ -3220,7 +3224,8 @@ module.exports = React.createClass({
       height: props.height,
       fill: props.fill,
       onMouseOver: props.handleMouseOver,
-      onMouseLeave: props.handleMouseLeave
+      onMouseLeave: props.handleMouseLeave,
+      onClick: this.handleOnClick
     }), React.createElement('text', {
       x: props.width / 2,
       y: props.height / 2,
@@ -3342,7 +3347,8 @@ module.exports = React.createClass({
         label: node.label,
         fontSize: props.fontSize,
         textColor: props.textColor,
-        hoverAnimation: props.hoverAnimation
+        hoverAnimation: props.hoverAnimation,
+        handleOnClick: props.handleOnClick
       });
     }, this);
 
@@ -3408,7 +3414,8 @@ module.exports = React.createClass({
       colorAccessor: props.colorAccessor,
       textColor: props.textColor,
       fontSize: props.fontSize,
-      hoverAnimation: props.hoverAnimation
+      hoverAnimation: props.hoverAnimation,
+      handleOnClick: props.handleOnClick
     })));
   }
 
