@@ -32,7 +32,7 @@ module.exports = React.createClass({
   },
 
   handleOnClick() {
-    this.props.handleOnClick(this.props.label);
+    if (this.props.handleOnClick) this.props.handleOnClick(this.props.label);
   },
 
   render() {
