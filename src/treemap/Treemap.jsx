@@ -60,6 +60,8 @@ module.exports = React.createClass({
             fontSize={props.fontSize}
             hoverAnimation={props.hoverAnimation}
             handleOnClick={props.handleOnClick}
+            showHoverLabel={props.showHoverLabel}
+            hideHoverLabel={props.hideHoverLabel}
           />
         </g>
       </Chart>

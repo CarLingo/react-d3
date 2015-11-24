@@ -59,7 +59,9 @@ module.exports = React.createClass({
             textColor: props.textColor, 
             fontSize: props.fontSize, 
             hoverAnimation: props.hoverAnimation, 
-            handleOnClick: props.handleOnClick}
+            handleOnClick: props.handleOnClick, 
+            showHoverLabel: props.showHoverLabel, 
+            hideHoverLabel: props.hideHoverLabel}
           )
         )
       )

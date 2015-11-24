@@ -2634,12 +2634,16 @@ module.exports = React.createClass({
     this.setState({
       fill: shade(this.props.fill, 0.2)
     });
+
+    if (this.props.showHoverLabel) this.props.showHoverLabel(this.props.label);
   },
 
   _restoreArc: function _restoreArc() {
     this.setState({
       fill: this.props.fill
     });
+
+    if (this.props.hideHoverLabel) this.props.hideHoverLabel();
   }
 });
 
@@ -2705,7 +2709,9 @@ module.exports = React.createClass({
         showOuterLabels: props.showOuterLabels,
         sectorBorderColor: props.sectorBorderColor,
         hoverAnimation: props.hoverAnimation,
-        handleOnClick: props.handleOnClick
+        handleOnClick: props.handleOnClick,
+        showHoverLabel: props.showHoverLabel,
+        hideHoverLabel: props.hideHoverLabel
       });
     });
     return React.createElement('g', { className: 'rd3-piechart-pie', transform: props.transform }, arcs);
@@ -2790,7 +2796,9 @@ module.exports = React.createClass({
       showOuterLabels: props.showOuterLabels,
       sectorBorderColor: props.sectorBorderColor,
       hoverAnimation: props.hoverAnimation,
-      handleOnClick: props.handleOnClick
+      handleOnClick: props.handleOnClick,
+      showHoverLabel: props.showHoverLabel,
+      hideHoverLabel: props.hideHoverLabel
     })));
   }
 
@@ -3284,12 +3292,16 @@ module.exports = React.createClass({
     this.setState({
       fill: shade(this.props.fill, 0.05)
     });
+
+    if (this.props.showHoverLabel) this.props.showHoverLabel(this.props.label);
   },
 
   _restoreCell: function _restoreCell() {
     this.setState({
       fill: this.props.fill
     });
+
+    if (this.props.hideHoverLabel) this.props.hideHoverLabel();
   }
 });
 
@@ -3348,7 +3360,9 @@ module.exports = React.createClass({
         fontSize: props.fontSize,
         textColor: props.textColor,
         hoverAnimation: props.hoverAnimation,
-        handleOnClick: props.handleOnClick
+        handleOnClick: props.handleOnClick,
+        showHoverLabel: props.showHoverLabel,
+        hideHoverLabel: props.hideHoverLabel
       });
     }, this);
 
@@ -3415,7 +3429,9 @@ module.exports = React.createClass({
       textColor: props.textColor,
       fontSize: props.fontSize,
       hoverAnimation: props.hoverAnimation,
-      handleOnClick: props.handleOnClick
+      handleOnClick: props.handleOnClick,
+      showHoverLabel: props.showHoverLabel,
+      hideHoverLabel: props.hideHoverLabel
     })));
   }
 

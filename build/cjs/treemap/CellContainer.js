@@ -40,11 +40,15 @@ module.exports = React.createClass({
     this.setState({
       fill: shade(this.props.fill, 0.05)
     });
+
+    if (this.props.showHoverLabel) this.props.showHoverLabel(this.props.label);
   },
 
   _restoreCell:function() {
     this.setState({
       fill: this.props.fill
     });
+
+    if (this.props.hideHoverLabel) this.props.hideHoverLabel();
   }
 });
