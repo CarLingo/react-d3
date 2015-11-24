@@ -71,6 +71,8 @@ module.exports = React.createClass({
             sectorBorderColor={props.sectorBorderColor}
             hoverAnimation={props.hoverAnimation}
             handleOnClick={props.handleOnClick}
+            showHoverLabel={props.showHoverLabel}
+            hideHoverLabel={props.hideHoverLabel}
           />
         </g>
       </Chart>

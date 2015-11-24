@@ -38,11 +38,15 @@ module.exports = React.createClass({
     this.setState({
       fill: shade(this.props.fill, 0.2)
     });
+
+    if (this.props.showHoverLabel) this.props.showHoverLabel(this.props.label);
   },
 
   _restoreArc:function() {
     this.setState({
       fill: this.props.fill
     });
+
+    if (this.props.hideHoverLabel) this.props.hideHoverLabel();
   }
 });
